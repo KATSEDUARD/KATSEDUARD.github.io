@@ -1,4 +1,4 @@
-#year-panel span {
+#calendar__year-panel span {
     font-size: 30px;
     margin-top: -5px;
 }
@@ -9,16 +9,16 @@
     border-radius: 10px;
 }
 
-#year-panel {
+#calendar__year-panel {
     margin-bottom: 20px;
 }
 
-#days > div {
+#calendar__days > div {
     text-align: center;
     border-radius: 5px;
 }
 
-#days {
+#calendar__days {
     padding-left: 11px !important;
     padding-right: 11px !important;
 }
