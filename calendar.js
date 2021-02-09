@@ -1,6 +1,5 @@
 let vueCalendar = new Vue({
     el: "#app-calendar",
-    // Дані для календаря
     data: {
         currentYear: new Date().getFullYear(),
         currentMonth: "",
@@ -22,7 +21,6 @@ let vueCalendar = new Vue({
             { name: "December", days: 31 }
         ]
     },
-    // Функції календаря
     methods: {
         prevYear() {
             this.currentYear--;
@@ -87,7 +85,6 @@ let vueCalendar = new Vue({
             el.classList.add('active-day');
         }
     },
-    // Методи для високосних років
     beforeMount() {
         this.currentMonth = this.months[new Date().getMonth()].name;
     },
