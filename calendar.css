@@ -23,13 +23,13 @@
     padding-right: 11px !important;
 }
 
-#days > div:hover {
+#calendar__days > div:hover {
     background: #007bff;
     color: white;
     cursor: pointer;
 }
 
-#days > div:focus{
+#calendar__days > div:focus{
     border: 3px solid black;
 }
 
