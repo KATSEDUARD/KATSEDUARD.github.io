@@ -1,0 +1,39 @@
+#year-panel span {
+    font-size: 30px;
+    margin-top: -5px;
+}
+
+#calendar {
+    padding: 15px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+}
+
+#year-panel {
+    margin-bottom: 20px;
+}
+
+#days > div {
+    text-align: center;
+    border-radius: 5px;
+}
+
+#days {
+    padding-left: 11px !important;
+    padding-right: 11px !important;
+}
+
+#days > div:hover {
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#days > div:focus{
+    border: 3px solid black;
+}
+
+.active-day {
+    background: #007bff;
+    color: white;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Calendar</title>
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> -->
+    </script>
+</head>
+
+<body>
+    <div id="app-calendar" class="col-sm-12 col-lg-6">
+        <div id="calendar">
+            <div id="year-panel" class="row">
+                <div class="col-sm-4 col-lg-4">
+                    <button @click="prevYear" class="prev btn btn-primary text-left"><i
+                            class="fas fa-arrow-left"></i></button>
+                </div>
+                <span class="col-sm-4 col-lg-4 text-center">{{ currentYear }}</span>
+                <div class="col-sm-4 col-lg-4 text-right">
+                    <button @click="nextYear" class="next btn btn-primary"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div id="month-panel" style="padding-left: 15px !important; padding-right: 15px !important;" class="row">
+
+                <select v-model="currentMonth" class="col-sm-12 col-lg-6 custom-select" @change="getDaysAmount">
+                    <option v-for="month in months" :value="month.name">
+                        {{ month.name }}
+                    </option>
+                </select>
+                <div class="col-sm-12 col-lg-6" style="padding-right: 0 !important;"><input disabled type="text"
+                        class="form-control" :value="date" id="out" aria-label="Date"></div>
+            </div>
+            <div id="days" class="row">
+                <div v-for="day in getDaysAmount()" :id="day" @click="setCurrentDay"
+                    style="margin-top: 25px; padding: 10px;" class="col-sm-1 day">
+                    {{ day }}
+                </div>
+            </div>
+            <div class="row" style="padding-left: 15px !important; padding-right: 15px !important; margin-top: 25px;">
+                <button class="col-sm-12 btn btn-success" style="margin-bottom: 15px;" @click="setDate">Set A
+                    Date</button>
+                <button class="col-sm-12 btn btn-primary" style="margin-bottom: 15px;" @click="today">Today</button>
+                <button class="col-sm-12 btn btn-danger" @click="cancelDate">Cancel A
+                    Date</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/5c78eed0ca.js" crossorigin="anonymous"></script>
+    <script src="calendar.js"></script>
+</body>
+
+</html>
