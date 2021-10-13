@@ -19,9 +19,16 @@ let vueCalendar = new Vue({
             { name: "October", days: 31 },
             { name: "November", days: 30 },
             { name: "December", days: 31 }
-        ]
+        ],
+        weekDays: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        weekDay: ""
     },
     methods: {
+        getWeekDay() {
+            const fullDate = new Date(`${this.currentMonth} ${this.currentDay}, ${this.currentYear} 00:00:00`);
+            this.weekDay = this.weekDays[fullDate.getDay()];
+            return this.weekDay;
+        },
         prevYear() {
             this.currentYear--;
             this.bissextileYear();
@@ -51,7 +58,7 @@ let vueCalendar = new Vue({
             if (this.currentDay === 0 || (this.currentDay > 28 && this.currentMonth === "February" && this.currentYear % 4 !== 0)) {
                 this.date = "Set a Day!";
             } else {
-                this.date = `${this.currentDay}/${this.currentMonth}/${this.currentYear}`;
+                this.date = `${this.currentDay}/${this.currentMonth}/${this.currentYear} ${this.getWeekDay()}`;
             }
             return this.date;
         },
@@ -73,7 +80,7 @@ let vueCalendar = new Vue({
             this.currentDay = date.getDate();
             this.currentMonth = this.months[date.getMonth()].name;
             this.currentYear = date.getFullYear();
-            this.date = `${this.currentDay}/${this.currentMonth}/${this.currentYear}`;
+            this.date = `${this.currentDay}/${this.currentMonth}/${this.currentYear} ${this.getWeekDay()}`;
         },
         toggleDays(el) {
             for (let i = 0; i < this.currentMonthDaysAmount; i++) {
