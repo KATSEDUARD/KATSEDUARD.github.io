@@ -97,5 +97,6 @@ let vueCalendar = new Vue({
     },
     mounted() {
         this.bissextileYear();
+        this.today();
     }
 });
