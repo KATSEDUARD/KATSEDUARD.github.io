@@ -31,13 +31,13 @@ let vueCalendar = new Vue({
         },
         prevYear() {
             this.currentYear--;
-            this.bissextileYear();
+            this.leapYear();
         },
         nextYear() {
             this.currentYear++;
-            this.bissextileYear();
+            this.leapYear();
         },
-        bissextileYear() {
+        leapYear() {
             if (this.currentYear % 4 === 0) {
                 this.months[1].days = 29;
             }
@@ -96,7 +96,7 @@ let vueCalendar = new Vue({
         this.currentMonth = this.months[new Date().getMonth()].name;
     },
     mounted() {
-        this.bissextileYear();
+        this.leapYear();
         this.today();
     }
 });
