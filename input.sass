@@ -1,0 +1,38 @@
+@use 'main'
+    
+#calendar__days 
+    div:hover 
+        background: main.$button-background
+        color: main.$number-color
+        cursor: pointer
+
+#calendar__days
+    div 
+        text-align: center
+        border-radius: 5px
+
+#calendar__days 
+    div:focus
+        border: 3px solid black
+
+.active-day 
+    background: main.$button-background
+    color: main.$number-color
+
+#calendar__days 
+    padding-left: 11px !important
+    padding-right: 11px !important
+
+#calendar__year-panel span 
+    font-size: 30px
+    margin-top: -5px
+
+
+#calendar 
+    padding: 15px
+    border: 1px solid #dfdfdf
+    border-radius: 10px
+
+
+#calendar__year-panel 
+    margin-bottom: 20px

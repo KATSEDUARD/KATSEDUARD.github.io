@@ -55,7 +55,7 @@ let vueCalendar = new Vue({
             this.toggleDays(e.target);
         },
         setDate() {
-            if (this.currentDay === 0 || (this.currentDay > 28 && this.currentMonth === "February" && this.currentYear % 4 !== 0)) {
+            if (this.currentDay === 0 || (this.currentDay > 28 && this.currentMonth === "February" && this.currentYear % 4 !== 0) || (this.currentDay === 31 && this.currentMonthDaysAmount < 31)) {
                 this.date = "Set a Day!";
             } else {
                 this.date = `${this.currentDay}/${this.currentMonth}/${this.currentYear} ${this.getWeekDay()}`;
